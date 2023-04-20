@@ -1,5 +1,6 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Error from "./Component/Error";
 import ForgotPass from "./Component/ForgotPass";
 import Login from "./Component/Login";
 import NewPass from "./Component/NewPass";
@@ -15,6 +16,8 @@ function App() {
         <Header />
         <div>
           <Routes>
+            <Route path="*" element={<Error />} />
+            <Route path={"/404"} element={<Error />} />
             <Route path={"/login"} element={<Login />} />
             <Route path={"/signUp"} element={<SignUp />} />
             <Route path={"/profile"} element={<Profile />} />
